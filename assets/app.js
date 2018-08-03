@@ -32,6 +32,11 @@ var items = {
     modifier: 1,
     description: 'ITS COLD!',
   },
+  water: {
+    name: 'Water',
+    modifier: 3,
+    description: "Its wet!",
+  },
 }
 
 let selectedCharacter = characters.person1
