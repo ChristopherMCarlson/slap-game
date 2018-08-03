@@ -15,19 +15,36 @@
 <body>
   <div class="container">
     <div class="row">
+      <h2>Name:
+        <span id="name"></span>
+      </h2>
+    </div>
+    <div class="row">
+      <h2>Health:
+        <span id="health"></span>
+      </h2>
+    </div>
+    <div class="row">
+      <h2>Hits:
+        <span id="hits"></span>
+      </h2>
+    </div>
+    <div class="row">
+      <img src="//unsplash.it/200/200/" alt="">
+    </div>
+    <div class="row">
       <div class="col-sm-4">
-        <button>
+        <button onclick="slap()">
           <p>Slap!</p>
         </button>
-      </div>
-      <div class="col-sm-4">
-        <button>
+        <button onclick="punch()">
           <p>Punch!</p>
         </button>
-      </div>
-      <div class="col-sm-4">
-        <button>
+        <button onclick="kick()">
           <p>Kick!</p>
+        </button>
+        <button onclick="reset()">
+          <p>Reset</p>
         </button>
       </div>
     </div>
@@ -37,7 +54,7 @@
 
 
 
-  <link rel="stylesheet" href="assets/app.js">
+  <script src="assets/app.js"></script>
 </body>
 
 </html>
