@@ -57,6 +57,7 @@ function addMods() {
 function draw() {
   if (selectedCharacter.health <= 0) {
     selectedCharacter.health = 0;
+    alert('He ded!');
   }
   document.getElementById("health").innerHTML = selectedCharacter.health;
   document.getElementById("hits").innerHTML = selectedCharacter.hits;
