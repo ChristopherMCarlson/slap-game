@@ -1,49 +1,56 @@
-var health = 100;
-var hits = 0;
-var person = 'Guy Dudeson'
+var person = {
+  name: 'Guy Dudeson',
+  health: 150,
+  healthFull: 150,
+  hits: 0,
+}
 
 function draw() {
-  document.getElementById("health").innerHTML = health;
-  document.getElementById("hits").innerHTML = hits;
-  document.getElementById("name").innerHTML = person;
+  if (person.health <= 0) {
+    person.health = 0;
+  }
+  document.getElementById("health").innerHTML = person.health;
+  document.getElementById("hits").innerHTML = person.hits;
+  document.getElementById("name").innerHTML = person.name;
 }
 
 draw();
 
 function reset() {
-  health = 100;
-  hits = 0;
+  person.health = person.healthFull;
+  person.hits = 0;
   draw();
 }
 
 function slap() {
-  if (health <= 0) {
-    hits++;
+  if (person.health <= 0) {
+    person.hits++;
     draw();
   } else {
-    health--;
-    hits++;
+    person.health--;
+    person.hits++;
     draw()
   };
 }
 
 function punch() {
-  if (health <= 0) {
-    hits++;
+  if (person.health <= 0) {
+    person.hits++;
     draw();
   } else {
-    health -= 5;
-    hits++;
+    person.health -= 5;
+    person.hits++;
     draw();
   }
 }
 function kick() {
-  if (health <= 0) {
-    hits++;
+  if (person.health <= 0) {
+    // person.health = 0;
+    person.hits++;
     draw();
   } else {
-    health -= 10;
-    hits++;
+    person.health -= 10;
+    person.hits++;
     draw();
   }
 }
