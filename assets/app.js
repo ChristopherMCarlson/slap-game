@@ -6,6 +6,7 @@ var characters = {
     health: 50,
     healthFull: 50,
     hits: 0,
+    img: 'grunt.png',
     items: [],
   },
   person2: {
@@ -75,55 +76,56 @@ function draw() {
     document.getElementById("health").innerHTML = selectedCharacter.health;
     document.getElementById("hits").innerHTML = selectedCharacter.hits;
     document.getElementById("name").innerHTML = selectedCharacter.name;
-  }
-}
+    document.getElementById('enemyImg').innerHTML = <img src="selectedCharacter.img" alt="">
+      }
+    }
 
-draw();
+    draw();
 
 function reset() {
-  selectedCharacter.health = selectedCharacter.healthFull;
-  selectedCharacter.hits = 0;
-  selectedCharacter.items = [];
-  draw();
-}
+        selectedCharacter.health = selectedCharacter.healthFull;
+      selectedCharacter.hits = 0;
+      selectedCharacter.items = [];
+      draw();
+    }
 
 function slap() {
   if (selectedCharacter.health <= 0) {
-    selectedCharacter.hits++;
-    draw();
+        selectedCharacter.hits++;
+      draw();
   } else {
-    selectedCharacter.health -= 1 + addMods();
-    selectedCharacter.hits++;
-    draw()
-  };
-}
+        selectedCharacter.health -= 1 + addMods();
+      selectedCharacter.hits++;
+      draw()
+    };
+  }
 
 function punch() {
   if (selectedCharacter.health <= 0) {
-    selectedCharacter.hits++;
-    draw();
+        selectedCharacter.hits++;
+      draw();
   } else {
-    selectedCharacter.health -= 5 + addMods();
-    selectedCharacter.hits++;
-    draw();
+        selectedCharacter.health -= 5 + addMods();
+      selectedCharacter.hits++;
+      draw();
+    }
   }
-}
 function kick() {
   if (selectedCharacter.health <= 0) {
-    // selectedCharacter.health = 0;
-    selectedCharacter.hits++;
-    draw();
+        // selectedCharacter.health = 0;
+        selectedCharacter.hits++;
+      draw();
   } else {
-    selectedCharacter.health -= 10 + addMods();
-    selectedCharacter.hits++;
-    draw();
+        selectedCharacter.health -= 10 + addMods();
+      selectedCharacter.hits++;
+      draw();
+    }
   }
-}
 
 function giveFire() {
-  selectedCharacter.items.push(items.fire);
-}
+        selectedCharacter.items.push(items.fire);
+      }
 
 function giveIce() {
-  selectedCharacter.items.push(items.ice);
-}
+        selectedCharacter.items.push(items.ice);
+      }
