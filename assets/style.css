@@ -1,0 +1,26 @@
+/* * {
+  outline: 1px solid red;
+} */
+
+.body-bg {
+  background-image: url('bg.png');
+  background-size: cover;
+}
+
+.head-bg {
+  background-image: url('topBar.png');
+  background-size: 100%;
+  background-position: 100% 100%;
+  width: 100%;
+}
+
+.force-foot-down {
+  position: fixed;
+  bottom: 0;
+}
+
+.foot-bg {
+  background-image: url('bottomBar.png');
+  background-size: 100vw;
+  width: 100%;
+}

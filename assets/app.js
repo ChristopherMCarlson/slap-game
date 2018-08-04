@@ -2,16 +2,23 @@
 
 var characters = {
   person1: {
-    name: 'Guy Dudeson',
-    health: 150,
-    healthFull: 150,
+    name: 'Grunt',
+    health: 50,
+    healthFull: 50,
     hits: 0,
     items: [],
   },
   person2: {
-    name: 'Dude Guyson',
+    name: 'Elite',
     health: 120,
     healthFull: 120,
+    hits: 0,
+    items: [],
+  },
+  person3: {
+    name: 'Brute',
+    health: 180,
+    healthFull: 180,
     hits: 0,
     items: [],
   },
@@ -63,11 +70,12 @@ function addMods() {
 function draw() {
   if (selectedCharacter.health <= 0) {
     selectedCharacter.health = 0;
-    alert('He ded!');
+    document.getElementById("name").innerHTML = "Enemy Defeated!";
+  } else {
+    document.getElementById("health").innerHTML = selectedCharacter.health;
+    document.getElementById("hits").innerHTML = selectedCharacter.hits;
+    document.getElementById("name").innerHTML = selectedCharacter.name;
   }
-  document.getElementById("health").innerHTML = selectedCharacter.health;
-  document.getElementById("hits").innerHTML = selectedCharacter.hits;
-  document.getElementById("name").innerHTML = selectedCharacter.name;
 }
 
 draw();
@@ -95,7 +103,7 @@ function punch() {
     selectedCharacter.hits++;
     draw();
   } else {
-    selectedCharacter.health -= 5;
+    selectedCharacter.health -= 5 + addMods();
     selectedCharacter.hits++;
     draw();
   }
@@ -106,7 +114,7 @@ function kick() {
     selectedCharacter.hits++;
     draw();
   } else {
-    selectedCharacter.health -= 10;
+    selectedCharacter.health -= 10 + addMods();
     selectedCharacter.hits++;
     draw();
   }

@@ -12,64 +12,45 @@
 
 </head>
 
-<body>
-  <div class="container">
-    <div class="row">
-      <h2>Name:
-        <span id="name"></span>
-      </h2>
-    </div>
-    <div class="row">
-      <h2>Health:
-        <span id="health"></span>
-      </h2>
-    </div>
-    <div class="row">
-      <h2>Hits:
-        <span id="hits"></span>
-      </h2>
-    </div>
-    <div class="row">
-      <img src="//unsplash.it/200/200/" alt="">
-    </div>
-    <div class="row">
-      <div class="col-sm-4">
-        <button onclick="slap()">
-          <p>Slap!</p>
-        </button>
-        <button onclick="punch()">
-          <p>Punch!</p>
-        </button>
-        <button onclick="kick()">
-          <p>Kick!</p>
-        </button>
-        <button onclick="reset()">
-          <p>Reset</p>
-        </button>
+<body class='body-bg'>
+
+  <header>
+    <div class="container-fluid head-bg">
+      <div class="row pb-3 d-flex">
+        <div class="col-sm-3 pt-5 pb-5 align-middle">
+          <h4 class='text-center'>Enemy Health
+          </h4>
+          <h4 id="health" class='text-center'></h4>
+        </div>
+        <div class="col-sm-6 pt-4 text-center">
+          <h2 id='name'></h2>
+        </div>
+        <div class="col-sm-3 pt-5 pb-5 align-middle">
+          <h4 class='text-center'>Hit Count
+          </h4>
+          <h4 id="hits" class='text-center'></h4>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <button onclick="giveFire()">
-        Add fire!
-      </button>
-      <button onclick="giveIce()">
-        Add ice!
-      </button>
     </div>
-    <div class="row">
-      <button onclick="character1()">
-        Guy
-      </button>
-      <button onclick="character2()">
-        Dude
-      </button>
+  </header>
+  <main>
+    <div class="container-fluid"></div>
+  </main>
+
+
+
+
+
+  <footer>
+    <div class="container-fluid foot-bg force-foot-down" width='100% '>
+      <div class="row pb-5 pt-5 d-flex">
+        <div class="col-sm-3 pt-5 pb-5 align-middle">
+          <h1 class="text-center pt-5">bottom</h1>
+        </div>
+      </div>
     </div>
-  </div>
-
-
-
-
-
+  </footer>
   <script src="assets/app.js"></script>
 </body>
 
