@@ -37,7 +37,7 @@
   <main>
     <div class="container-fluid">
       <div class="row d-flex">
-        <div class="col-sm-12 align-middle">
+        <div class="col-sm-12 align-middle text-center">
           <span id='enemyImg'></span>
         </div>
       </div>
@@ -50,9 +50,41 @@
 
   <footer>
     <div class="container-fluid foot-bg force-foot-down" width='100% '>
-      <div class="row pb-5 pt-5 d-flex">
-        <div class="col-sm-3 pt-5 pb-5 align-middle">
-          <h1 class="text-center pt-5">bottom</h1>
+      <div class="row pb-1 pt-2 d-flex">
+        <div class="col-sm-3 pt-5 pb-2 align-middle">
+          <h3 class="text-center pt-5">Enemies</h3>
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <img src="assets/gruntIcon.png" alt="" onclick="character1()">
+              <img src="assets/eliteIcon.png" alt="" onclick="character2()">
+              <img src="assets/bruteIcon.png" alt="" onclick="character3()">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 pt-4 mt-5 align-middle">
+          <h3 class="text-center pt-5">Modifiers</h3>
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <button type="button" class="btn btn-info" onclick="giveFire()">Double Shot</button>
+              <button type="button" class="btn btn-info" onclick="giveIce()">Weapon Charge</button>
+              <button type="button" class="btn btn-info" onclick="giveWater()">Explosive Rounds</button>
+            </div>
+          </div>
+          <div class="row pt-1">
+            <div class="col-sm-12 text-center">
+              <button type="button" class="btn btn-info" onclick="reset()">Reset</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 pt-5 pb-2 align-middle">
+          <h3 class="text-center pt-5">Atacks</h3>
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <button type="button" class="btn btn-info" onclick="slap()">Melee</button>
+              <button type="button" class="btn btn-info" onclick="punch()">Shoot</button>
+              <button type="button" class="btn btn-info" onclick="kick()">Grenade</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
