@@ -34,6 +34,14 @@ var characters = {
     img: '<img src="assets/lose.png" alt="">',
     items: [],
   },
+  boss: {
+    name: 'Warden Eternal',
+    health: 250,
+    healthFull: 250,
+    hits: 0,
+    img: '<img src="assets/wardenEternal.png" alt="">',
+    items: []
+  }
 }
 let selectedCharacter = characters.person1
 
@@ -60,14 +68,22 @@ var items = {
 }
 
 function draw() {
-  if (selectedCharacter.health <= 0) {
-    document.getElementById("health").innerHTML = "0";
-    document.getElementById("name").innerHTML = "Enemy Defeated!";
-    document.getElementById("enemyImg").innerHTML = " "
-  } else if (characters.player.health <= 0) {
+  if (characters.player.health <= 0) {
     document.getElementById("playerHealth").innerHTML = 0;
     document.getElementById("enemyImg").innerHTML = characters.player.img;
     document.getElementById("health").innerHTML = '';
+    document.getElementById("name").innerHTML = '';
+  } else if (characters.person1.health == 0 && characters.person2.health == 0 && characters.person3.health == 0) {
+    document.getElementById("health").innerHTML = characters.boss.health;
+    document.getElementById("hits").innerHTML = characters.boss.hits;
+    document.getElementById("name").innerHTML = characters.boss.name;
+    document.getElementById('enemyImg').innerHTML = characters.boss.img;
+    document.getElementById("playerHealth").innerHTML = characters.player.health;
+    selectedCharacter = characters.boss;
+  } else if (selectedCharacter.health <= 0) {
+    document.getElementById("health").innerHTML = "0";
+    document.getElementById("name").innerHTML = "Enemy Defeated!";
+    document.getElementById("enemyImg").innerHTML = " "
   } else {
     document.getElementById("health").innerHTML = selectedCharacter.health;
     document.getElementById("hits").innerHTML = selectedCharacter.hits;
@@ -110,8 +126,12 @@ function reset() {
   characters.person2.health = characters.person2.healthFull;
   characters.person3.health = characters.person3.healthFull;
   characters.player.health = characters.player.healthFull;
-  selectedCharacter.hits = 0;
-  selectedCharacter.items = [];
+  characters.person1.hits = 0;
+  characters.person2.hits = 0;
+  characters.person3.hits = 0;
+  characters.person1.items = [];
+  characters.person2.items = [];
+  characters.person3.items = [];
   draw();
 }
 
@@ -166,19 +186,26 @@ function giveWater() {
 }
 
 function enemyAttack() {
-  if (selectedCharacter == characters.character1) {
+  if (selectedCharacter === characters.person1) {
     characters.player.health -= Math.floor(Math.random() * 5);
     draw();
-  } else if (selectedCharacter == characters.person2) {
+  } else if (selectedCharacter === characters.person2) {
     characters.player.health -= Math.floor(Math.random() * 10);
     draw();
-  } else {
+  } else if (selectedCharacter === characters.person3) {
     characters.player.health -= Math.floor(Math.random() * 15);
+    draw();
+  } else {
+    characters.player.health -= Math.floor(Math.random() * 40);
     draw();
   }
 }
 
 function heal() {
-  characters.player.health += Math.floor(Math.random() * 100);
-  enemyAttack();
+  if (characters.player.health >= 120) {
+    characters.player.health = 120;
+  } else {
+    characters.player.health += Math.floor(Math.random() * 50);
+    enemyAttack();
+  }
 }
