@@ -125,13 +125,17 @@ function reset() {
   characters.person1.health = characters.person1.healthFull;
   characters.person2.health = characters.person2.healthFull;
   characters.person3.health = characters.person3.healthFull;
+  characters.boss.health = characters.boss.healthFull;
   characters.player.health = characters.player.healthFull;
   characters.person1.hits = 0;
   characters.person2.hits = 0;
   characters.person3.hits = 0;
+  characters.boss.hits = 0;
   characters.person1.items = [];
   characters.person2.items = [];
   characters.person3.items = [];
+  characters.boss.items = [];
+  selectedCharacter = characters.person1
   draw();
 }
 
