@@ -74,6 +74,16 @@ function draw() {
     document.getElementById("health").innerHTML = '';
     document.getElementById("name").innerHTML = '';
   } else if (selectedCharacter.health <= 0) {
+    if (selectedCharacter == characters.person1) {
+      var gruntDeathSound = new Audio('assets/gruntDeath.mp3');
+      gruntDeathSound.play();
+    } else if (selectedCharacter == characters.person2) {
+      var eliteDeathSound = new Audio('assets/eliteDeath.mp3');
+      eliteDeathSound.play();
+    } else if (selectedCharacter == characters.person3) {
+      var bruteDeathSound = new Audio('assets/bruteDeath.mp3');
+      bruteDeathSound.play();
+    }
     document.getElementById("health").innerHTML = "0";
     document.getElementById("name").innerHTML = "Enemy Defeated!";
     document.getElementById("enemyImg").innerHTML = " "
@@ -92,16 +102,22 @@ draw();
 
 function character1() {
   selectedCharacter = characters.person1;
+  var gruntSpawnSound = new Audio('assets/gruntSpawn.mp3');
+  gruntSpawnSound.play();
   draw();
 }
 
 function character2() {
   selectedCharacter = characters.person2;
+  var eliteSpawnSound = new Audio('assets/eliteSpawn.mp3');
+  eliteSpawnSound.play();
   draw();
 }
 
 function character3() {
   selectedCharacter = characters.person3;
+  var bruteSpawnSound = new Audio('assets/bruteSpawn.mp3');
+  bruteSpawnSound.play();
   draw();
 }
 
