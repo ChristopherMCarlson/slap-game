@@ -52,17 +52,17 @@ let selectedCharacter = characters.person1
 var items = {
   fire: {
     name: 'Fire',
-    modifier: 1,
+    modifier: Math.floor(Math.random() * 5),
     description: 'IT BURNS!',
   },
   ice: {
     name: 'Ice',
-    modifier: 2,
+    modifier: Math.floor(Math.random() * 10),
     description: 'ITS COLD!',
   },
   water: {
     name: 'Water',
-    modifier: 3,
+    modifier: Math.floor(Math.random() * 20),
     description: "Its wet!",
   },
 }
@@ -73,13 +73,6 @@ function draw() {
     document.getElementById("enemyImg").innerHTML = characters.player.img;
     document.getElementById("health").innerHTML = '';
     document.getElementById("name").innerHTML = '';
-  } else if (characters.person1.health == 0 && characters.person2.health == 0 && characters.person3.health == 0) {
-    document.getElementById("health").innerHTML = characters.boss.health;
-    document.getElementById("hits").innerHTML = characters.boss.hits;
-    document.getElementById("name").innerHTML = characters.boss.name;
-    document.getElementById('enemyImg').innerHTML = characters.boss.img;
-    document.getElementById("playerHealth").innerHTML = characters.player.health;
-    selectedCharacter = characters.boss;
   } else if (selectedCharacter.health <= 0) {
     document.getElementById("health").innerHTML = "0";
     document.getElementById("name").innerHTML = "Enemy Defeated!";
@@ -144,7 +137,7 @@ function slap() {
     selectedCharacter.hits++;
     draw();
   } else {
-    selectedCharacter.health -= 1 + addMods();
+    selectedCharacter.health -= Math.floor(Math.random() * 5) + addMods();
     selectedCharacter.hits++;
     draw();
     enemyAttack();
@@ -156,7 +149,7 @@ function punch() {
     selectedCharacter.hits++;
     draw();
   } else {
-    selectedCharacter.health -= 5 + addMods();
+    selectedCharacter.health -= Math.floor(Math.random() * 10) + addMods();
     selectedCharacter.hits++;
     draw();
     enemyAttack();
@@ -167,7 +160,7 @@ function kick() {
     selectedCharacter.hits++;
     draw();
   } else {
-    selectedCharacter.health -= 10 + addMods();
+    selectedCharacter.health -= Math.floor(Math.random() * 20) + addMods();
     selectedCharacter.hits++;
     draw();
     enemyAttack();
@@ -211,5 +204,14 @@ function heal() {
   } else {
     characters.player.health += Math.floor(Math.random() * 50);
     enemyAttack();
+  }
+}
+
+function checkBoss() {
+  if (characters.person1.health <= 0 && characters.person2.health <= 0 && characters.person3.health <= 0) {
+    selectedCharacter = characters.boss;
+    draw();
+  } else {
+    draw();
   }
 }
