@@ -34,12 +34,15 @@
   margin-top: 3rem;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1367px) {
   .row-spacing {
-    margin-top: 0.5rem;
-    margin-bottom: 0.25rem;
+        margin-top: 1rem;
+    margin-bottom: -1.75rem;
   }
   .mod-margin {
     margin-top: 1.5rem;
+  }
+  .img-shrink {
+    height: 100%;
   }
 }

@@ -23,7 +23,7 @@ var characters = {
     health: 180,
     healthFull: 180,
     hits: 0,
-    img: '<img src="assets/brute.png" alt="">',
+    img: '<img src="assets/brute.png" alt="" class="img-shrink">',
     items: [],
   },
   player: {
