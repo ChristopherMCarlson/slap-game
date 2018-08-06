@@ -4,7 +4,8 @@
 
 .body-bg {
   background-image: url('bg.png');
-  background-size: cover;
+  background-size: auto;
+  background-repeat: no-repeat;
 }
 
 .head-bg {

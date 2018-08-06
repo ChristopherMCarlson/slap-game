@@ -139,6 +139,8 @@ function slap() {
   } else {
     selectedCharacter.health -= Math.floor(Math.random() * 5) + addMods();
     selectedCharacter.hits++;
+    var meleeSound = new Audio('assets/melee.mp3');
+    meleeSound.play();
     draw();
     enemyAttack();
   };
@@ -151,6 +153,8 @@ function punch() {
   } else {
     selectedCharacter.health -= Math.floor(Math.random() * 10) + addMods();
     selectedCharacter.hits++;
+    var shotSound = new Audio('assets/shot.mp3');
+    shotSound.play();
     draw();
     enemyAttack();
   }
@@ -162,6 +166,8 @@ function kick() {
   } else {
     selectedCharacter.health -= Math.floor(Math.random() * 20) + addMods();
     selectedCharacter.hits++;
+    var grenadeSound = new Audio('assets/grenade.mp3');
+    grenadeSound.play();
     draw();
     enemyAttack();
   }
@@ -169,16 +175,22 @@ function kick() {
 
 function giveFire() {
   selectedCharacter.items.push(items.fire);
+  var doubleSound = new Audio('assets/double.mp3');
+  doubleSound.play();
   enemyAttack();
 }
 
 function giveIce() {
   selectedCharacter.items.push(items.ice);
+  var chargeSound = new Audio('assets/charge.mp3');
+  chargeSound.play();
   enemyAttack();
 }
 
 function giveWater() {
   selectedCharacter.items.push(items.water);
+  var explosiveSound = new Audio('assets/explosive.mp3');
+  explosiveSound.play();
   enemyAttack();
 }
 
@@ -205,6 +217,8 @@ function heal() {
     draw();
   } else {
     characters.player.health += Math.floor(Math.random() * 50);
+    var healSound = new Audio('assets/heal.mp3');
+    healSound.play();
     enemyAttack();
   }
 }
