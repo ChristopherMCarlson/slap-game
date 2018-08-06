@@ -210,6 +210,8 @@ function giveWater() {
   enemyAttack();
 }
 
+var bossSounds = ['assets/boss1.mp3', 'assets/boss2.mp3', 'assets/boss3.mp3', 'assets/boss4.mp3', 'assets/boss5.mp3']
+
 function enemyAttack() {
   if (selectedCharacter === characters.person1) {
     characters.player.health -= Math.floor(Math.random() * 5);
@@ -222,6 +224,9 @@ function enemyAttack() {
     draw();
   } else {
     characters.player.health -= Math.floor(Math.random() * 40);
+    var randSound = Math.floor(Math.random() * 4);
+    var bossFightSound = new Audio(bossSounds[randSound])
+    bossFightSound.play();
     draw();
   }
 }
@@ -242,6 +247,8 @@ function heal() {
 function checkBoss() {
   if (characters.person1.health <= 0 && characters.person2.health <= 0 && characters.person3.health <= 0) {
     selectedCharacter = characters.boss;
+    var bossSpawnSound = new Audio('assets/bossSpawn.mp3');
+    bossSpawnSound.play();
     draw();
   } else {
     draw();
