@@ -83,6 +83,9 @@ function draw() {
     } else if (selectedCharacter == characters.person3) {
       var bruteDeathSound = new Audio('assets/bruteDeath.mp3');
       bruteDeathSound.play();
+    } else if (selectedCharacter == characters.boss) {
+      var victory = new Audio('assets/victory.mp3');
+      victory.play();
     }
     document.getElementById("health").innerHTML = "0";
     document.getElementById("name").innerHTML = "Enemy Defeated!";
