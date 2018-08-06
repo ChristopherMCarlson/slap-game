@@ -201,6 +201,8 @@ function enemyAttack() {
 function heal() {
   if (characters.player.health >= 120) {
     characters.player.health = 120;
+  } else if (characters.player.health <= 0) {
+    draw();
   } else {
     characters.player.health += Math.floor(Math.random() * 50);
     enemyAttack();
