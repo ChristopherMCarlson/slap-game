@@ -45,4 +45,7 @@
   .img-shrink {
     height: 100%;
   }
+  .col-shrink {
+    height: 285px;
+  }
 }

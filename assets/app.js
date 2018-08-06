@@ -7,7 +7,7 @@ var characters = {
     health: 50,
     healthFull: 50,
     hits: 0,
-    img: '<img src="assets/grunt.png" alt="">',
+    img: '<img src="assets/grunt.png" alt="" class="img-shrink">',
     items: [],
   },
   person2: {
@@ -15,7 +15,7 @@ var characters = {
     health: 120,
     healthFull: 120,
     hits: 0,
-    img: '<img src="assets/elite.png" alt="" background-size="cover">',
+    img: '<img src="assets/elite.png" alt="" class="img-shrink">',
     items: [],
   },
   person3: {
@@ -31,7 +31,7 @@ var characters = {
     health: 120,
     healthFull: 120,
     hits: 0,
-    img: '<img src="assets/lose.png" alt="">',
+    img: '<img src="assets/lose.png" alt="" class="img-shrink">',
     items: [],
   },
   boss: {
@@ -39,7 +39,7 @@ var characters = {
     health: 250,
     healthFull: 250,
     hits: 0,
-    img: '<img src="assets/wardenEternal.png" alt="">',
+    img: '<img src="assets/wardenEternal.png" alt="" class="img-shrink">',
     items: []
   }
 }
